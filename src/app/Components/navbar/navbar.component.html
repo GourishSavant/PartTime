@@ -1,0 +1,56 @@
+<div>
+    <p>
+        <mat-toolbar color="primary">
+          <a routerLink="" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+          </a>
+          <span>Part Time Job</span>
+          <span class="example-spacer"></span>
+
+         <a 
+         *ngIf="!login.isLoggedIn()"
+         routerLink="/login">
+            <button class="btn-1" mat-raised-button
+             color="primary">Login</button>
+         </a>
+         <!-- routerLink="/signup" -->
+
+           <a
+             >
+             
+            <button mat-raised-button 
+            *ngIf="!login.isLoggedIn()"
+             routerLink="/signup" 
+          
+            color="primary">SignUp</button>
+           </a>
+
+           <a
+           (click)="logout()"
+           *ngIf="login.isLoggedIn()"
+             >
+            <button mat-raised-button 
+            color="primary">Logput</button>
+           </a>
+
+           <button
+          
+           *ngIf="login.isLoggedIn()"
+           mat-button
+           class="example-icon favorite-icon "
+             routerLink="/admin/Profile"
+           class="ajust" class="btn-1" 
+             >
+             {{login.getUser().username}}
+          
+          </button>
+          
+        </mat-toolbar>
+      </p>
+      <div>
+        
+      </div>
+</div>
+ 
+  
+ 

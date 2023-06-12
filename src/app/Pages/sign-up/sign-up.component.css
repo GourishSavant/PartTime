@@ -1,0 +1,15 @@
+.full-width {
+    width: 50%;
+  }
+
+.bootstrap-wrapper{
+    margin: auto;
+}
+.text-center{
+    text-align: center;
+}
+.main{
+    width: 60%;
+    margin: auto;
+    border: solid 1px rgb(155, 145, 145);
+}

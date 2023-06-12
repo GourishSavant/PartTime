@@ -1,0 +1,17 @@
+.full-width {
+    width: 100%;
+  }
+
+.bootstrap-wrapper{
+    margin: auto;
+}
+.text-center{
+    text-align: center;
+}
+.const{
+    width: 70%;
+    margin: auto;
+}
+.btn{
+    margin-left: 20px;
+}

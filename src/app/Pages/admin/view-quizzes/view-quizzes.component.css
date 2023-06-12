@@ -1,0 +1,15 @@
+.main{
+    width: 90%;
+}
+.mat-card{
+    width: 1200px;
+    margin-left: 80px;
+}
+.btn{
+margin-left: 10px;
+}
+.example-header-image {
+    background-image: url("../../../../assets/images.png");
+    background-size: cover;
+  }
+  

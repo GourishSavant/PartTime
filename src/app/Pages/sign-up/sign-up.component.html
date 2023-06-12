@@ -1,0 +1,92 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <mat-card class="main">
+            <div class="container text-center">
+              <img src="../../../assets/logo.png" alt="" />
+            </div>
+  
+            <h1 class="text-center">Register Here !!</h1>
+  
+            <!-- {{ user | json }} -->
+  
+           <form (ngSubmit)="formSubmit()"class="text-center">
+            <p>
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Username </mat-label>
+                  <input 
+                  required
+                  [(ngModel)]="user.username"
+                  name="username"
+                  matInput
+                   placeholder="Placeholder">
+                   <mat-hint>Username must be unique !!</mat-hint>
+                  
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input
+                  required
+                  [(ngModel)]="user.password"
+                  name="password"
+                  type="password"
+                   matInput
+                    placeholder="Placeholder">
+                
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>FirstName</mat-label>
+                  <input 
+                  required
+                [(ngModel)]="user.firstName"
+                name="firstName"
+                matInput
+                 placeholder="Placeholder">
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>LastName</mat-label>
+                  <input 
+                  required
+                [(ngModel)]="user.lastName"
+                name="lastName"
+                matInput 
+                placeholder="Placeholder">
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input 
+                  required
+                  [(ngModel)]="user.email"
+                  name="email"
+                  type="email"
+                  matInput 
+                  placeholder="Placeholder">
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Phone</mat-label>
+                  <input 
+                  required
+                  [(ngModel)]="user.phone"
+                  name="phone"
+                  type="number"
+                  matInput placeholder="Placeholder">
+                </mat-form-field>
+              </p>
+              <button type="submit" mat-flat-button color="primary">Primary</button>
+           </form>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>

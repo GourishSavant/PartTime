@@ -1,0 +1,21 @@
+.main{
+    margin-left: 40px;
+    margin-top: 30px;
+
+}
+.mass{
+    
+    background-size: cover;
+    width: 70vh;
+    height: 80vh;
+}
+.net{
+    display: flex;
+}
+.image{
+    width: 400px;
+    margin-top: 20px;
+}
+.text{
+    margin-left: 60px;
+}
