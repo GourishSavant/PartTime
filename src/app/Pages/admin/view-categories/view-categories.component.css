@@ -1,0 +1,14 @@
+.main{
+    width: 100vh;
+}
+.const{
+    display: flex;
+}
+.Categories{
+    width: 100%;
+    margin: auto;
+    margin-left: 300px;
+}
+.container{
+    margin-left: 520px;
+}

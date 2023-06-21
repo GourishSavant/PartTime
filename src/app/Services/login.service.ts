@@ -6,62 +6,69 @@ import baseUrl from './helper';
   providedIn: 'root'
 })
 export class LoginService {
+  loginStatusSubject: any;
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-  //current user:which is logged in
-  public getCurrentUser(){
-    return this.http.get(`${baseUrl}/current-user`)
-  }
-  // generate token 
-  public generateToken(loginData:any){
-    return this.http.post(`${baseUrl}/generate-token`,loginData)
+  //current user: which is loggedin
+  public getCurrentUser() {
+    return this.http.get(`${baseUrl}/current-user`);
   }
 
-  // login user  set token in local session 
-  public loginUser(token:any){
-    localStorage.setItem('token',token);
+  //generate token
+
+  public generateToken(loginData: any) {
+    return this.http.post(`${baseUrl}/generate-token`, loginData);
+  }
+
+  // //login user: set token in localStorage
+  public loginUser(token: string) {
+    localStorage.setItem('token', token);
+
     return true;
   }
-  //isLogged in or not 
-  public isLoggedIn()
-  {
-    let tokenStr = localStorage.getItem("token")
-    if(tokenStr == undefined || tokenStr == '' || tokenStr == null)
-    {
+
+  //isLogin: user is logged in or not
+  public isLoggedIn() {
+    let tokenStr = localStorage.getItem('token');
+    if (tokenStr == undefined || tokenStr == '' || tokenStr == null) {
       return false;
-    }else{
+    } else {
       return true;
     }
   }
-//logout remove token from local storage 
- public logout(){
-  localStorage.removeItem("token");
-  return true;
- }
- //get token 
- public getToken(){
-  return localStorage.getItem('token');
- }
- //set user detials
- public setUser(user:any){
-  localStorage.setItem('user',JSON.stringify(user));
- }
-//  getUser
-public getUser(){
-  let userStr =localStorage.getItem("user");
-  if(userStr!=null){
-    return JSON.parse(userStr);
-  }
-  else{
-    this.logout();
-    return null;
-  }
-}
 
-//get user role
-public getUserrole(){
-let user = this.getUser();
-return user.authorities[0].authority;
+  // logout : remove token from local storage
+  public logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    return true;
+  }
 
-}
+  //get token
+  public getToken() {
+    return localStorage.getItem('token');
+  }
+
+  //set userDetail
+  public setUser(user: any) {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  //getUser
+  public getUser() {
+    let userStr = localStorage.getItem('user');
+    if (userStr != null) {
+      return JSON.parse(userStr);
+    } else {
+      this.logout();
+      return null;
+    }
+  }
+
+  //get user role
+
+  public getUserRole() {
+    let user = this.getUser();
+    return user.authorities[0].authority;
+  }
 }

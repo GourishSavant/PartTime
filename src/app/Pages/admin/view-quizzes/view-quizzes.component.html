@@ -1,0 +1,63 @@
+
+<H1 mat-Subheader> ALL Quizzes </H1>
+<!-- class="mt10 mr20 ml20" -->
+<mat-card class="mat-card"  *ngFor="let q of quizzes">
+    <div class="main">
+    <mat-card-header class="main">
+      <div mat-card-avatar class="example-header-image"></div>
+      
+      <mat-card-title >
+        {{ q.title }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{ q.category.title }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ q.description}}</p>
+    </mat-card-content>
+      <button
+        [routerLink]="'/admin/view-questions/' + q.qId + '/' + q.title"
+        mat-flat-button
+        color="accent"
+        class="btn"
+      >
+        Questions
+      </button>
+      <button  mat-stroked-button color="accent" class="btn" >
+        Max Marks: {{ q.maxMarks }}
+        
+      </button>
+      <button mat-stroked-button color="accent" class="btn">
+        Questions: {{ q.numberOfQuestions }}
+      </button>
+      <button
+        [routerLink]="'/admin/quiz/' + q.qId"
+        mat-flat-button
+        color="accent"
+        class="ml20"
+        class="btn"
+      >
+        Update
+      </button>
+      <button class="btn" mat-flat-button color="accent" class="btn">Attempts</button>
+  
+      <button
+        mat-flat-button
+        color="warn"
+        class="ml20"
+        (click)="deleteQuiz(q.qId)"
+        class="btn"
+      >
+        Delete
+      </button>
+    </div>
+  </mat-card>
+  <mat-divider></mat-divider>
+  <br>
+  <div class="container text-center mt20">
+    <button routerLink="/admin/add-quiz" mat-raised-button color="accent">
+      Add New Quiz
+    </button>
+  </div>
+  
